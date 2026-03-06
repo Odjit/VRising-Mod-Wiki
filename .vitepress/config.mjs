@@ -22,6 +22,7 @@ export default defineConfig({
     'node_modules/**',
     'vitepress-dist/**',
     'README.md',
+    'user/game_update.md',
   ],
 
   title: 'V Rising Mod Wiki',
