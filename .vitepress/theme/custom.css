@@ -1,0 +1,485 @@
+/* ============================================================
+   V Rising Mod Wiki — VitePress Vampire Theme
+   Palette from VRisingModdingLogoNew.png
+   ============================================================ */
+
+/* --- Brand / accent colours -------------------------------- */
+:root {
+  --vp-c-brand-1:    #a78bfa;  /* soft violet — logo rim      */
+  --vp-c-brand-2:    #7c3aed;  /* deep violet — active states */
+  --vp-c-brand-3:    #6d28d9;
+  --vp-c-brand-soft: rgba(167, 139, 250, 0.14);
+
+  /* Amber re-used for highlights / active nav */
+  --wr-amber:     #f59e0b;
+  --wr-amber-lt:  #fcd34d;
+  --wr-rose:      #db2777;
+}
+
+/* --- Dark palette overrides -------------------------------- */
+.dark {
+  --vp-c-bg:          #0d0a1a;
+  --vp-c-bg-soft:     #13102a;
+  --vp-c-bg-mute:     #1b1840;
+  --vp-c-bg-elv:      #13102a;
+
+  --vp-c-border:      #2d235e;
+  --vp-c-divider:     #2d235e;
+  --vp-c-gutter:      #070511;
+
+  --vp-c-text-1:      #d4c8e8;
+  --vp-c-text-2:      #8878b8;
+  --vp-c-text-3:      #5c4f8a;
+
+  --vp-sidebar-bg-color:  #070511;
+  --vp-nav-bg-color:      rgba(7, 5, 17, 0.92);
+  --vp-local-search-bg:   #13102a;
+
+  --vp-code-bg:       #13102a;
+  --vp-code-color:    #d4c8e8;
+}
+
+/* --- Light palette — warm parchment + logo colours --------- */
+:root:not(.dark) {
+  /* Backgrounds: warm parchment tones */
+  --vp-c-bg:          #fdf6e8;
+  --vp-c-bg-soft:     #f5ead6;
+  --vp-c-bg-mute:     #ecdcc4;
+  --vp-c-bg-elv:      #f5ead6;
+
+  --vp-c-border:      #d4b896;
+  --vp-c-divider:     #d4b896;
+  --vp-c-gutter:      #f0e4d0;
+
+  /* Text: deep purple-brown — high contrast on parchment */
+  --vp-c-text-1:      #2d1f3d;
+  --vp-c-text-2:      #6b4f7a;
+  --vp-c-text-3:      #9a7daa;
+
+  /* Sidebar + nav tinted parchment */
+  --vp-sidebar-bg-color: #f0e4d0;
+  --vp-nav-bg-color:     rgba(253, 246, 232, 0.95);
+  --vp-local-search-bg:  #f5ead6;
+
+  /* Code: parchment bg, violet ink */
+  --vp-code-bg:    #ecdcc4;
+  --vp-code-color: #5b21b6;
+
+  /* Brand: deeper violet for contrast on light bg */
+  --vp-c-brand-1:    #6d28d9;
+  --vp-c-brand-2:    #5b21b6;
+  --vp-c-brand-3:    #4c1d95;
+  --vp-c-brand-soft: rgba(109, 40, 217, 0.12);
+}
+
+/* Sidebar inactive text in light mode: deep purple, readable on parchment */
+:root:not(.dark) .VPSidebarItem .VPLink .text {
+  color: #4a3560;
+}
+
+/* Active sidebar item: darkened amber for contrast on parchment */
+:root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink,
+:root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink .text {
+  color: #b85c08 !important;
+}
+:root:not(.dark) .VPSidebarItem.is-active > .item::before {
+  background: #b85c08;
+}
+
+/* h1 in light mode: burnt amber — "ink on parchment" feel */
+:root:not(.dark) .vp-doc h1 {
+  color: #b85c08;
+}
+
+/* h3/h4 in light mode: deep violet */
+:root:not(.dark) .vp-doc h3,
+:root:not(.dark) .vp-doc h4 {
+  color: #5b21b6;
+}
+
+/* Links in light mode */
+:root:not(.dark) .vp-doc a          { color: #6d28d9; }
+:root:not(.dark) .vp-doc a:hover    { color: #b85c08; text-decoration-color: #b85c08; }
+
+/* Code blocks in light mode: deep violet accent bar */
+:root:not(.dark) .vp-doc div[class*='language-'] {
+  border-left-color: #5b21b6;
+}
+
+/* Inline code in light mode */
+:root:not(.dark) .vp-doc :not(pre) > code {
+  background: #ecdcc4;
+  color:      #5b21b6;
+  border-color: #d4b896;
+}
+
+/* Table header in light mode */
+:root:not(.dark) .vp-doc th {
+  background: #ecdcc4;
+}
+:root:not(.dark) .vp-doc tr:nth-child(even) td {
+  background: #f5ead6;
+}
+
+/* --- Two-line nav title: slot-injected via CustomLayout.vue - */
+/* .wr-nav-title sits after the logo inside VPNavBarTitle      */
+
+/* Bump logo height (VitePress default is 24 px) */
+:root { --vp-nav-logo-height: 50px; }
+
+.wr-nav-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+/* "V Rising" — top line, smaller, reddish-orange */
+.wr-nav-line1 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  color: #f0701e;
+}
+/* "Mod Wiki" — bottom line, larger, violet */
+.wr-nav-line2 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--vp-c-brand-1);
+}
+
+/* --- Fonts — Cinzel only on h1 ---------------------------- */
+.vp-doc h1 {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+/* --- Heading colours --------------------------------------- */
+.vp-doc h1 {
+  color: #e8830a;   /* warm orange — between amber and deep orange */
+  border-bottom: 1px solid var(--vp-c-border);
+  padding-bottom: 0.25em;
+}
+.vp-doc h2 {
+  color: var(--vp-c-text-1);
+  border-top: 1px solid var(--vp-c-border);
+}
+.vp-doc h3,
+.vp-doc h4 {
+  color: var(--vp-c-brand-1);
+}
+
+/* --- Links ------------------------------------------------- */
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration-color: transparent;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.vp-doc a:hover {
+  color: var(--wr-amber-lt);
+  text-decoration-color: var(--wr-amber);
+}
+
+/* --- Sidebar — inactive item text: readable weight + colour - */
+.VPSidebarItem .VPLink .text {
+  font-weight: 500;
+}
+/* Dark mode: light lavender on deep sidebar */
+.dark .VPSidebarItem .VPLink .text {
+  color: #b0a4d4;
+}
+
+/* Give every sidebar item a left gutter so the active bar    */
+/* has room to sit without overlapping the first letter.      */
+.VPSidebarItem > .item {
+  padding-left: 10px;
+}
+
+/* --- Sidebar — active item: amber text + left bar ---------- */
+.VPSidebarItem.is-active > .item > .VPLink,
+.VPSidebarItem.is-active > .item > .VPLink .text {
+  color: var(--wr-amber) !important;
+  font-weight: 600;
+}
+
+/* ::before bar lives in the 10px gutter — clear of the text  */
+.VPSidebarItem.is-active > .item {
+  position: relative;
+}
+.VPSidebarItem.is-active > .item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 3px;
+  background: var(--wr-amber);
+  border-radius: 0 2px 2px 0;
+}
+
+/* --- Auto-hide "On this page" for pages with 0 or 1 entries - */
+/* Catches pages with no outline-able headings at all           */
+.VPDoc .aside:not(:has(.outline-link)),
+/* Catches pages whose root outline list has exactly one item   */
+.VPDoc .aside:has(ul.root > li:only-child) {
+  display: none !important;
+}
+
+/* --- Nav bar ----------------------------------------------- */
+.VPNavBar {
+  border-bottom: 1px solid var(--vp-c-border) !important;
+}
+
+/* --- Code blocks — left violet accent bar ------------------ */
+.vp-doc div[class*='language-'] {
+  border-left: 3px solid var(--vp-c-brand-2);
+  border-radius: 0 8px 8px 0;
+}
+
+/* --- Inline code ------------------------------------------- */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand-1);
+  border: 1px solid var(--vp-c-border);
+}
+
+/* --- Tables (standard markdown tables) --------------------- */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.vp-doc th {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-1);
+}
+.vp-doc tr:nth-child(even) td {
+  background: var(--vp-c-bg-soft);
+}
+
+/* --- Custom badges ----------------------------------------- */
+.badge-admin  { color: #f87171; font-weight: 600; }
+.badge-player { color: #4ade80; font-weight: 600; }
+
+/* --- Console Commands table -------------------------------- */
+.cc-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.cc-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cc-search {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.4rem 0.75rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  color: var(--vp-c-text-1);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.cc-search:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
+}
+
+.cc-select {
+  padding: 0.4rem 0.6rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  color: var(--vp-c-text-1);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.cc-info {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  margin-left: auto;
+}
+
+.cc-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.88rem;
+}
+
+.cc-table th,
+.cc-table td {
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.cc-table th {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-1);
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.cc-table tr:hover td {
+  background: rgba(167, 139, 250, 0.04);
+}
+
+/* Column widths */
+.cc-col-cmd  { width: 200px; }
+.cc-col-user { width: 68px;  text-align: center; }
+.cc-col-hid  { width: 58px;  text-align: center; }
+.cc-col-args { width: 220px; }
+.cc-col-desc { width: auto;  }
+
+.cc-cmd-code {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.82rem;
+  display: inline-block;
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.cc-note-btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+  cursor: pointer;
+  color: #f59e0b;
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.cc-note-text {
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  background: rgba(20, 15, 40, 0.95);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-1);
+  white-space: normal;
+}
+
+.cc-desc-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.cc-desc-text.expanded {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  cursor: pointer;
+}
+td:has(.cc-desc-text):hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cc-arg-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: flex-start;
+}
+
+.cc-arg-pill {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.45rem;
+  font-size: 0.76rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+  cursor: default;
+}
+
+.cc-icon-visible { opacity: 0.85; color: var(--vp-c-brand-1); }
+.cc-icon-hidden  { opacity: 0.35; }
+
+/* Pagination */
+.cc-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.cc-page-btn {
+  padding: 0.25rem 0.55rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 5px;
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: border-color 0.12s, background 0.12s;
+}
+.cc-page-btn:hover   { border-color: var(--vp-c-brand-1); }
+.cc-page-btn.active  { background: var(--vp-c-brand-2); border-color: var(--vp-c-brand-2); color: #fff; }
+.cc-page-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* --- Prefab table ------------------------------------------ */
+.pf-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.pf-search {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  color: var(--vp-c-text-1);
+  font-size: 0.9rem;
+  outline: none;
+}
+.pf-search:focus {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
+}
+.pf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.pf-table th,
+.pf-table td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--vp-c-border);
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.82rem;
+}
+.pf-table th {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-1);
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+.pf-table tr:hover td { background: rgba(167, 139, 250, 0.04); }
+.pf-info { font-size: 0.8rem; color: var(--vp-c-text-2); margin-bottom: 0.5rem; }

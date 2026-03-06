@@ -1,6 +1,7 @@
 ---
 has_children: true
 title: For Developers
+aside: false
 ---
 # For Developers
 

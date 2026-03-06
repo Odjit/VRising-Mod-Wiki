@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vitepress-dev",
+      "runtimeExecutable": "C:/nodejs/npm.cmd",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "jekyll-native",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--livereload"],
+      "port": 4000
+    },
+    {
+      "name": "jekyll-docker",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["run", "--rm", "-v", "C:\\Users\\odjit\\Desktop\\OtherProj\\VRising-Mod-Wiki:/usr/src/app", "-p", "4000:4000", "starefossen/github-pages"],
+      "port": 4000
+    }
+  ]
+}

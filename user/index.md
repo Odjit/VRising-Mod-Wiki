@@ -2,6 +2,7 @@
 has_children: true
 title: For Users
 has_toc: false
+aside: false
 ---
 
 # For users of mods

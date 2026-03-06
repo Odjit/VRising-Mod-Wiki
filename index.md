@@ -1,14 +1,15 @@
 ---
 title: V Rising Mod Wiki
 nav_order: 1
+aside: false
 ---
 
 <div style="text-align: center;">
     <img src="https://github.com/user-attachments/assets/b04cb6ae-6635-4fc2-8f75-2b28d4060edb" width="500">
 </div>
 
-<div class="text-center" style="margin-top: 20px;">
-    <a href="https://vrisingmods.com/discord" class="btn btn-purple fs-6 mt-2 px-6">Join Discord</a>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://vrisingmods.com/discord" style="display:inline-block; padding: 0.5rem 1.5rem; background: #7c3aed; color: #fff; border-radius: 6px; font-weight: 600; text-decoration: none;">Join Discord</a>
 </div>
 
 ## Getting Started
@@ -26,11 +27,11 @@ New to **V Rising mod development**? Follow these steps to begin:
 ## Contribute to the Wiki
 
 This wiki is a community-driven project, and we encourage you to contribute! 
-**Want to help?**  
-- Add or improve guides  
-- Share your modding knowledge  
-- Fix outdated information  
+**Want to help?**
+
+- Add or improve guides
+- Share your modding knowledge
+- Fix outdated information
 
 If you have knowledge to share, feel free to [edit pages or submit new content](https://wiki.vrisingmods.com/editing.html) via GitHub.
 
-{:toc}
