@@ -49,7 +49,7 @@ const filtered = computed(() => {
         class="prefab-index-card"
       >
         <strong>{{ cat.name }}</strong>
-        <span class="prefab-index-count">{{ cat.count }}</span>
+        <span class="prefab-index-count">({{ cat.count }})</span>
       </a>
     </div>
   </div>

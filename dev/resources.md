@@ -1,17 +1,16 @@
 ---
 title: Resources
-parent: For Developers
 ---
 
 # Resources for Mod Developers
 
 ## Wiki Resources
 
-- [**Open Source Repositories**](https://wiki.vrisingmods.com/dev/open%20source.html)
+- [**Open Source Repositories**](/dev/open%20source)
   - The VRising modding community focuses on open-source mods to encourage learning and the development of new features. Feel free to explore and reference any of the open-source mods listed here, but please be sure to **credit the creators** and follow any relevant license requirements.
-- [**Prefabs list**](https://wiki.vrisingmods.com/prefabs/)
+- [**Prefabs list**](/prefabs/)
   - Lists of the various prefabs, grouped by type, or you can review all of them.
-- [**GPT Instructions**](https://wiki.vrisingmods.com/dev/gpt_instructions.html)
+- [**GPT Instructions**](/dev/gpt_instructions)
   - Instructions to help guide responses for [C#(Rising)](https://chatgpt.com/g/g-XGdFZaBHL-c-rising).
   
 ---
@@ -36,7 +35,6 @@ Tools made by those in the community.
 ---
 
 ## Unity Explorer
-{: .d-inline-block }
 
 [Unity Explorer](https://github.com/yukieiji/UnityExplorer) is a tool that allows you to dig into the internal structure of the game while it's running.
 

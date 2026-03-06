@@ -2,20 +2,14 @@ import { defineConfig } from 'vitepress'
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 
-// Now at the repo root — __dirname is .vitepress/, repoRoot is one level up
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const repoRoot  = resolve(__dirname, '..')
 
 const CUSTOM_LAYOUTS = new Set(['console_commands', 'prefab'])
 
 export default defineConfig({
-  // srcDir defaults to '.' — the repo root, where all .md files live.
-  // Jekyll's _* directories and dotfiles are already excluded by VitePress.
   outDir: './vitepress-dist',
 
-  // Remap Jekyll custom layout names to 'doc' so VitePress renders the full
-  // shell (nav + sidebar + footer). The original layout name is stashed in
-  // `customLayout` so our theme can still inject the right Vue component.
   transformPageData(pageData) {
     const layout = pageData.frontmatter.layout
     if (CUSTOM_LAYOUTS.has(layout)) {
@@ -28,7 +22,6 @@ export default defineConfig({
     'node_modules/**',
     'vitepress-dist/**',
     'README.md',
-    'editing.md',
   ],
 
   title: 'V Rising Mod Wiki',
@@ -50,14 +43,12 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        // @data → _data/ in the repo root; usable in regular `import` statements.
-        // For import.meta.glob, use the literal path '/_data/...' instead.
+        // @data → _data/; for import.meta.glob use '/_data/...' directly
         '@data': resolve(repoRoot, '_data'),
       },
     },
     server: {
       fs: {
-        // Allow Vite dev server to serve files from the repo root
         allow: [repoRoot],
       },
     },
@@ -75,8 +66,10 @@ export default defineConfig({
       {
         text: 'Community',
         items: [
+          { text: 'Overview',     link: '/community/' },
           { text: 'Discord',      link: 'https://vrisingmods.com/discord' },
           { text: 'Thunderstore', link: 'https://thunderstore.io/c/v-rising/' },
+          { text: 'Contributing', link: '/editing' },
         ],
       },
     ],
@@ -112,14 +105,29 @@ export default defineConfig({
         },
       ],
 
+      '/community/': [
+        {
+          text: 'Community',
+          items: [
+            { text: 'Overview',                  link: '/community/' },
+            { text: 'Values of This Community',  link: '/community/values' },
+            { text: 'Abandoned Mods',            link: '/community/abandoned-mods' },
+            { text: 'Mod Monetization',          link: '/community/monetization' },
+          ],
+        },
+      ],
+
       '/prefabs/': [
         {
           text: 'Prefabs',
           items: [
             { text: 'Overview',     link: '/prefabs/' },
             { text: 'All Prefabs',  link: '/prefabs/All' },
-            { text: 'Remainders',   link: '/prefabs/Remainders' },
+            { text: 'NPCs',         link: '/prefabs/CHAR' },
+            { text: 'Items',        link: '/prefabs/Item' },
+            { text: 'Tile Models',  link: '/prefabs/TM' },
             { text: 'VBlood Names', link: '/prefabs/VBloodNames' },
+            { text: 'Remainders',   link: '/prefabs/Remainders' },
           ],
         },
       ],

@@ -11,8 +11,8 @@ aside: false
 - Support: Check out support channels in the discord or in the mod's readme
 
 ## Installation
-- [Manual BepInEx Installation](https://wiki.vrisingmods.com/user/bepinex_install.html)
-- [Manual Mod Installation](https://wiki.vrisingmods.com/user/Mod_Install.html)
-- [Using Server Mods in-game](https://wiki.vrisingmods.com/user/Using_Server_Mods.html)
+- [Manual BepInEx Installation](/user/bepinex_install)
+- [Manual Mod Installation](/user/Mod_Install)
+- [Using Server Mods in-game](/user/Using_Server_Mods)
 
-### If you wish to play an earlier version of V Rising: [Client Rollback](https://wiki.vrisingmods.com/user/client_rollback.html) 
+### If you wish to play an earlier version of V Rising: [Client Rollback](/user/client_rollback) 
