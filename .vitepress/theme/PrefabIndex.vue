@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 
 // Load all prefab JSONs eagerly just to get entry counts
 const prefabModules = import.meta.glob('/_data/prefabs/*.json', { eager: true })
@@ -45,7 +46,7 @@ const filtered = computed(() => {
       <a
         v-for="cat in filtered"
         :key="cat.name"
-        :href="`/prefabs/${cat.name}`"
+        :href="withBase(`/prefabs/${cat.name}`)"
         class="prefab-index-card"
       >
         <strong>{{ cat.name }}</strong>
