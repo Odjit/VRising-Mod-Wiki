@@ -1,94 +1,190 @@
-// $grey-dk-000: #716d6d;
-// $grey-dk-200: darken($grey-dk-000, 15%);
-// $grey-dk-250: darken($grey-dk-000, 20%);
-// $grey-dk-300: darken($grey-dk-000, 25%);
+// ============================================================
+// V Rising Mod Wiki — Vampire Color Scheme
+// Palette drawn from VRisingModdingLogoNew.png
+//   · Deep indigo/violet  — logo outer ring
+//   · Amber/gold          — moon inner glow
+//   · Rose/pink           — bat silhouette outline
+// ============================================================
 
-$body-background-color: $grey-dk-300;
-$sidebar-color: darken($grey-dk-300, 1.5%);
-$border-color: $grey-dk-200;
-$body-text-color: $grey-lt-300;
-$body-heading-color: $grey-lt-000;
-$nav-child-link-color: $grey-dk-000;
-$search-result-preview-color: $grey-dk-000;
-$link-color: #f74049;
-$btn-primary-color: $red-200;
-$base-button-color: $grey-dk-250;
-$search-background-color: $grey-dk-250;
-$table-background-color: $grey-dk-250;
-$feedback-color: darken($sidebar-color, 3%);
+// --- Custom palette ------------------------------------------
+$vampire-bg:        #0d0a1a;
+$vampire-sidebar:   #070511;
+$vampire-surface:   #13102a;
+$vampire-surface-2: #1b1840;
+$vampire-border:    #2d235e;
+$vampire-text:      #d4c8e8;
+$vampire-muted:     #8878b8;
+$vampire-heading:   #ede8ff;
 
-// The following highlight theme is more legible than that used for the light color scheme
+$vampire-violet:    #a78bfa;   // primary — logo rim
+$vampire-violet-dk: #7c3aed;   // deep violet — active states
+$vampire-amber:     #f59e0b;   // secondary — moon glow
+$vampire-amber-lt:  #fcd34d;   // lighter amber — hover
+$vampire-rose:      #db2777;   // warning/danger — bat outline
 
-// @import "./vendor/OneDarkJekyll/syntax-one-dark";
-// $code-background-color: #282c34;
+// --- Just the Docs variable overrides ------------------------
+$body-background-color:       $vampire-bg;
+$sidebar-color:               $vampire-sidebar;
+$border-color:                $vampire-border;
+$body-text-color:             $vampire-text;
+$body-heading-color:          $vampire-heading;
+$nav-child-link-color:        $vampire-muted;
+$search-result-preview-color: $vampire-muted;
+$link-color:                  $vampire-violet;
+$btn-primary-color:           $vampire-violet-dk;
+$base-button-color:           $vampire-surface-2;
+$search-background-color:     $vampire-surface;
+$table-background-color:      $vampire-surface;
+$feedback-color:              darken($vampire-sidebar, 2%);
+$code-background-color:       $vampire-surface;
 
-//@import "./vendor/OneDarkJekyll/syntax-one-dark-vivid";
-
-$code-background-color: #31343f;
+// --- Syntax highlighting -------------------------------------
 .highlight {
-    .k, .kd { color: #569CD6; }  // keywords
-    .nf { color: #DCDCAA; }      // method names
-    .p { color: #D4D4D4; }       // punctuation
-    .s { color: #CE9178; }       // strings
-    .n { color: #9CDCFE; }       // parameters
-    .c1 { color: #6A9955; }      // comments
-    .kt { color: #4EC9B0; }      // types
-  }
-
-// @import "./vendor/OneDarkJekyll/syntax-firewatch";
-// $code-background-color: #282c34;
-
-// @import "./vendor/OneDarkJekyll/syntax-firewatch-green";
-// $code-background-color: #282c34;
-
-.logo {
-    display: flex;
-
-    img {
-        width: 64px;
-        height: 64px;
-        padding: 5px;
-    }
-
-    .title {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        margin-left: 5px;
-
-        .top {
-            @extend .fs-5;
-        }
-
-        .bottom {
-            @extend .fs-6;
-        }
-    }
+  .k, .kd, .kr, .kn { color: #c084fc; }  // keywords      — purple
+  .nf, .nx           { color: #fbbf24; }  // methods       — amber
+  .p                 { color: #e2d9f3; }  // punctuation   — lavender
+  .s, .s1, .s2, .sb  { color: #f59e0b; }  // strings       — amber
+  .n, .na, .ni       { color: #93c5fd; }  // params/names  — sky blue
+  .c, .c1, .cm       { color: #5b6777; }  // comments      — muted grey
+  .kt, .nc           { color: #6ee7b7; }  // types/classes — teal
+  .mi, .mf           { color: #fb7185; }  // numbers       — rose
+  .o, .ow            { color: #94a3b8; }  // operators     — slate
 }
 
+// --- Code blocks — left accent bar ---------------------------
+pre.highlight, div.highlight {
+  border-left: 3px solid $vampire-violet-dk;
+  border-radius: 0 4px 4px 0;
+}
+
+// --- Headings — Cinzel font + subtle amber underline ---------
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+h1 {
+  border-bottom: 1px solid $vampire-border;
+  padding-bottom: 0.25em;
+  color: $vampire-amber-lt;
+}
+
+h2 {
+  color: $vampire-heading;
+}
+
+h3, h4 {
+  color: $vampire-violet;
+}
+
+// --- Links ---------------------------------------------------
+a:not(.site-title):not(.nav-list-link) {
+  &:hover {
+    color: $vampire-amber-lt;
+    text-decoration-color: $vampire-amber;
+  }
+}
+
+// --- Sidebar nav — hover & active states ---------------------
+.nav-list-link {
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba($vampire-violet, 0.08) !important;
+    color: $vampire-violet !important;
+  }
+
+  &.active {
+    background-color: rgba($vampire-amber, 0.1) !important;
+    color: $vampire-amber !important;
+    box-shadow: inset 3px 0 0 $vampire-amber;
+  }
+}
+
+// --- Site title in sidebar -----------------------------------
+.site-title {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+// --- Logo title block ----------------------------------------
+.logo {
+  display: flex;
+
+  img {
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 5px;
+
+    .top {
+      @extend .fs-5;
+      font-family: 'Cinzel', Georgia, serif;
+      color: $vampire-amber;
+      letter-spacing: 0.03em;
+    }
+
+    .bottom {
+      @extend .fs-6;
+      font-family: 'Cinzel', Georgia, serif;
+      color: $vampire-violet;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+// --- Search box ----------------------------------------------
+.search-input {
+  border-color: $vampire-border !important;
+
+  &:focus {
+    border-color: $vampire-violet !important;
+    box-shadow: 0 0 0 2px rgba($vampire-violet, 0.2) !important;
+    outline: none;
+  }
+}
+
+// --- Horizontal rules ----------------------------------------
+hr {
+  border-color: $vampire-border;
+}
+
+// --- Callouts — remap to palette colours ---------------------
+.opaque-background {
+  background-color: $vampire-surface-2 !important;
+}
+
+// --- Prefab cards --------------------------------------------
 .prefab-list {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .prefab-item {
-        padding: 1em 2em;
-        margin: 0.1em;
-        width: 32%;
-        @media (max-width: 900px) {
-            width: 48%;
-        }
-        @media (max-width: 500px) {
-            width: 100%;
-        }
-        min-width: 100px;
-        border: 1px solid transparent;
-        border-radius: 5px;
-        background: $grey-dk-250;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .prefab-item {
+    padding: 1em 2em;
+    margin: 0.1em;
+    width: 32%;
+
+    @media (max-width: 900px) { width: 48%; }
+    @media (max-width: 500px) { width: 100%; }
+
+    min-width: 100px;
+    border: 1px solid $vampire-border;
+    border-radius: 6px;
+    background: $vampire-surface;
+    transition: border-color 0.15s, background 0.15s;
+
+    &:hover {
+      background: $vampire-surface-2;
+      border-color: $vampire-violet;
     }
-    :hover {
-        background: $grey-dk-200;
+
+    &:active {
+      background: $vampire-bg;
     }
-    :active{
-        background: $grey-dk-300;
-    }
+  }
 }
