@@ -1,3 +1,5 @@
+html { scrollbar-gutter: stable; }
+
 :root {
   --vp-c-brand-1:    #a78bfa;
   --vp-c-brand-2:    #7c3aed;
@@ -203,10 +205,6 @@
 .VPNavBar.has-sidebar .divider { padding-left: 0 !important; }
 .VPNavBar .curtain { display: none !important; }
 
-.VPNavBar:not(.has-sidebar) .title {
-  min-width: var(--vp-sidebar-width);
-}
-
 .VPNavBar .content { flex: 1; min-width: 0; }
 .VPNavBar .content-body {
   display: flex;
@@ -218,9 +216,45 @@
     height: 63px !important;
   }
 }
-.VPNavBar .content-body .menu    { order: -1; margin-left: 2rem; }
-.VPNavBar .content-body .appearance { margin-left: 360px; }
-.VPNavBar .content-body .search  { order: 10; }
+/* Simulate .has-sidebar nav layout on non-sidebar pages so menu position matches sidebar pages.
+   The home page does NOT use layout:home in frontmatter, so .VPNavBar.home never fires.
+   Instead, target every page that lacks a sidebar — same CSS VitePress applies for .has-sidebar. */
+@media (min-width: 960px) {
+  .VPNavBar:not(.has-sidebar) .wrapper { padding: 0 !important; }
+  .VPNavBar:not(.has-sidebar) .container { max-width: 100% !important; }
+  /* Use child combinator (>) so we only target VPNavBar's own .title div,
+     NOT VPNavBarTitle's inner <a class="title"> which shares the same class name. */
+  .VPNavBar:not(.has-sidebar) .container > .title {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    z-index: 2 !important;
+    padding: 0 32px !important;
+    width: var(--vp-sidebar-width) !important;
+    height: var(--vp-nav-height) !important;
+    background-color: transparent !important;
+  }
+  .VPNavBar:not(.has-sidebar) .container > .content {
+    position: relative !important;
+    z-index: 1 !important;
+    padding-left: var(--vp-sidebar-width) !important;
+    padding-right: 32px !important;
+  }
+}
+/* Match VitePress's wide-viewport sidebar offset (≥1440px) */
+@media (min-width: 1440px) {
+  .VPNavBar:not(.has-sidebar) .container > .title {
+    padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)) !important;
+    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px) !important;
+  }
+  .VPNavBar:not(.has-sidebar) .container > .content {
+    padding-left:  calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)) !important;
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 32px) !important;
+  }
+}
+
+.VPNavBar .content-body .menu       { order: -1; }
+.VPNavBar .content-body .appearance { margin-left: auto; }
+.VPNavBar .content-body .search     { order: 10; }
 
 /* --- Code blocks --- */
 .vp-doc div[class*='language-'] {
