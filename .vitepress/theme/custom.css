@@ -11,8 +11,8 @@
   --vp-c-brand-soft: rgba(167, 139, 250, 0.14);
 
   /* Amber re-used for highlights / active nav */
-  --wr-amber:     #f59e0b;
-  --wr-amber-lt:  #fcd34d;
+  --wr-amber:     #FF9E70;
+  --wr-amber-lt:  #ffb896;
   --wr-rose:      #db2777;
 }
 
@@ -80,15 +80,15 @@
 /* Active sidebar item: darkened amber for contrast on parchment */
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink,
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink .text {
-  color: #b85c08 !important;
+  color: #FF9E70 !important;
 }
 :root:not(.dark) .VPSidebarItem.is-active > .item::before {
-  background: #b85c08;
+  background: #FF9E70;
 }
 
 /* h1 in light mode: burnt amber — "ink on parchment" feel */
 :root:not(.dark) .vp-doc h1 {
-  color: #b85c08;
+  color: #FF9E70;
 }
 
 /* h3/h4 in light mode: deep violet */
@@ -99,7 +99,7 @@
 
 /* Links in light mode */
 :root:not(.dark) .vp-doc a          { color: #6d28d9; }
-:root:not(.dark) .vp-doc a:hover    { color: #b85c08; text-decoration-color: #b85c08; }
+:root:not(.dark) .vp-doc a:hover    { color: #FF9E70; text-decoration-color: #FF9E70; }
 
 /* Code blocks in light mode: deep violet accent bar */
 :root:not(.dark) .vp-doc div[class*='language-'] {
@@ -168,7 +168,7 @@
 /* --- Heading fonts & colours ------------------------------- */
 .vp-doc h1 {
   font-family: 'Cinzel', Georgia, serif !important;
-  color: #e8830a;
+  color: #FF9E70;
   border-bottom: 1px solid var(--vp-c-border);
   padding-bottom: 0.25em;
 }
@@ -244,6 +244,23 @@
 /* --- Nav bar ----------------------------------------------- */
 .VPNavBar {
   border-bottom: 1px solid var(--vp-c-border) !important;
+}
+
+/* Menu left, search far right */
+.VPNavBar .content {
+  flex: 1;
+  justify-content: flex-start;
+}
+.VPNavBar .content-body {
+  width: 100%;
+  justify-content: flex-start;
+}
+.VPNavBar .content-body .menu {
+  order: -1;
+  margin-right: auto;
+}
+.VPNavBar .content-body .search {
+  order: 10;
 }
 
 /* --- Code blocks — left violet accent bar ------------------ */
@@ -370,7 +387,7 @@
   vertical-align: middle;
   margin-left: 0.25rem;
   cursor: pointer;
-  color: #f59e0b;
+  color: #FF9E70;
   font-size: 0.85rem;
   background: none;
   border: none;
@@ -378,8 +395,8 @@
   line-height: 1;
 }
 .cc-note-btn--active {
-  color: #f59e0b;
-  text-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+  color: #FF9E70;
+  text-shadow: 0 0 5px rgba(255, 158, 112, 0.5);
 }
 
 .cc-desc-text {
@@ -457,8 +474,8 @@ td:has(.cc-desc-text):hover {
   flex-direction: row;
   align-items: baseline;
   gap: 0.6rem;
-  background: rgba(245, 158, 11, 0.06);
-  border-left: 3px solid #f59e0b;
+  background: rgba(255, 158, 112, 0.06);
+  border-left: 3px solid #FF9E70;
   padding-left: calc(1rem - 3px); /* compensate for border */
 }
 
@@ -470,7 +487,7 @@ td:has(.cc-desc-text):hover {
   color: var(--vp-c-text-2);
 }
 .cc-expand-note .cc-expand-label {
-  color: #f59e0b;
+  color: #FF9E70;
 }
 
 /* Argument header: code name + type/required badges */
