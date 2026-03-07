@@ -198,7 +198,6 @@
 /* --- Nav bar --- */
 .VPNavBar {
   border-bottom: 1px solid var(--vp-c-border) !important;
-  background: transparent !important;
 }
 .VPNavBar.has-sidebar .divider { padding-left: 0 !important; }
 .VPNavBar .curtain { display: none !important; }
@@ -212,7 +211,8 @@
   display: flex;
   width: 100%;
   align-items: center;
-  background: transparent !important;
+  height: 63px !important;
+  background-color: var(--vp-nav-bg-color) !important;
 }
 .VPNavBar .content-body .menu    { order: -1; margin-left: 2rem; }
 .VPNavBar .content-body .appearance { margin-left: 360px; }
