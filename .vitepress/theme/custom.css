@@ -88,6 +88,10 @@
 :root:not(.dark) .VPSidebar {
   background: linear-gradient(to bottom, #EFE9FA 0%, #ECE7DF 12%) !important;
 }
+/* Sidebar sticky curtain: transparent so the gradient shows through */
+:root:not(.dark) .VPSidebar .curtain {
+  background: transparent !important;
+}
 
 /* h1 in light mode */
 :root:not(.dark) .vp-doc h1 {
@@ -247,6 +251,7 @@
 /* --- Nav bar ----------------------------------------------- */
 .VPNavBar {
   border-bottom: 1px solid var(--vp-c-border) !important;
+  background: transparent !important;
 }
 .VPNavBar.has-sidebar .divider {
   padding-left: 0 !important;
@@ -264,12 +269,13 @@
   display: flex;
   width: 100%;
   align-items: center;
+  background: transparent !important;
 }
 .VPNavBar .content-body .menu {
   order: -1;
 }
 .VPNavBar .content-body .appearance {
-  margin-left: auto;
+  margin-left: 360px;
 }
 .VPNavBar .content-body .search {
   order: 10;
