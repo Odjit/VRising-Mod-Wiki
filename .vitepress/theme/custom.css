@@ -1,81 +1,59 @@
-/* ============================================================
-   V Rising Mod Wiki — VitePress Vampire Theme
-   Palette from VRisingModdingLogoNew.png
-   ============================================================ */
-
-/* --- Brand / accent colours -------------------------------- */
 :root {
-  --vp-c-brand-1:    #a78bfa;  /* soft violet — logo rim      */
-  --vp-c-brand-2:    #7c3aed;  /* deep violet — active states */
+  --vp-c-brand-1:    #a78bfa;
+  --vp-c-brand-2:    #7c3aed;
   --vp-c-brand-3:    #6d28d9;
   --vp-c-brand-soft: rgba(167, 139, 250, 0.14);
-
-  /* Amber re-used for highlights / active nav */
   --wr-amber:     #FF9E70;
   --wr-amber-lt:  #ffb896;
   --wr-rose:      #db2777;
 }
 
-/* --- Dark palette overrides -------------------------------- */
 .dark {
   --vp-c-bg:          #0d0a1a;
   --vp-c-bg-soft:     #13102a;
   --vp-c-bg-mute:     #1b1840;
   --vp-c-bg-elv:      #13102a;
-
   --vp-c-border:      #2d235e;
   --vp-c-divider:     #2d235e;
   --vp-c-gutter:      #070511;
-
   --vp-c-text-1:      #d4c8e8;
   --vp-c-text-2:      #8878b8;
   --vp-c-text-3:      #5c4f8a;
-
   --vp-sidebar-bg-color:  #070511;
   --vp-nav-bg-color:      rgba(7, 5, 17, 0.92);
   --vp-local-search-bg:   #13102a;
-
   --vp-code-bg:       #13102a;
   --vp-code-color:    #d4c8e8;
 }
 
-/* --- Light palette — arcane library aesthetic -------------- */
 :root:not(.dark) {
   --vp-c-bg:          #F6F2E9;
   --vp-c-bg-soft:     #ECE7DF;
   --vp-c-bg-mute:     #E3DCCF;
   --vp-c-bg-elv:      #ECE7DF;
-
   --vp-c-border:      #C9B9E6;
   --vp-c-divider:     #C9B9E6;
   --vp-c-gutter:      #EFE9FA;
-
   --vp-c-text-1:      #2B2B2B;
   --vp-c-text-2:      #6B5F8A;
   --vp-c-text-3:      #9A8BBB;
-
   --vp-sidebar-bg-color: #ECE7DF;
   --vp-nav-bg-color:     rgba(246, 242, 233, 0.95);
   --vp-local-search-bg:  #ECE7DF;
-
   --vp-code-bg:    #E3DCCF;
   --vp-code-color: #6B4BB6;
-
   --vp-c-brand-1:    #6B4BB6;
   --vp-c-brand-2:    #4A2D86;
   --vp-c-brand-3:    #3A1F70;
   --vp-c-brand-soft: rgba(107, 75, 182, 0.12);
-
   --wr-amber:    #F2A65A;
   --wr-amber-lt: #F5B87A;
 }
 
-/* Sidebar inactive text */
 :root:not(.dark) .VPSidebarItem .VPLink .text {
   color: #4A2D86;
 }
 
-/* Active sidebar item */
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink,
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink .text {
   color: var(--wr-amber) !important;
@@ -84,43 +62,37 @@
   background: var(--wr-amber);
 }
 
-/* Sidebar: subtle violet glow at the top */
 :root:not(.dark) .VPSidebar {
   background: linear-gradient(to bottom, #EFE9FA 0%, #ECE7DF 12%) !important;
 }
-/* Sidebar sticky curtain: transparent so the gradient shows through */
-:root:not(.dark) .VPSidebar .curtain {
+.dark .VPSidebar {
+  background: linear-gradient(to right, #0d0820 0%, #070511 60%) !important;
+}
+:root:not(.dark) .VPSidebar .curtain,
+.dark .VPSidebar .curtain {
   background: transparent !important;
 }
 
-/* h1 in light mode */
-:root:not(.dark) .vp-doc h1 {
-  color: var(--wr-amber);
-}
+:root:not(.dark) .vp-doc h1 { color: var(--wr-amber); }
 
-/* h3/h4 in light mode */
 :root:not(.dark) .vp-doc h3,
 :root:not(.dark) .vp-doc h4 {
   color: #6B4BB6;
 }
 
-/* Links in light mode */
 :root:not(.dark) .vp-doc a          { color: #6B4BB6; }
 :root:not(.dark) .vp-doc a:hover    { color: var(--wr-amber); text-decoration-color: var(--wr-amber); }
 
-/* Code blocks in light mode */
 :root:not(.dark) .vp-doc div[class*='language-'] {
   border-left-color: #6B4BB6;
 }
 
-/* Inline code in light mode */
 :root:not(.dark) .vp-doc :not(pre) > code {
   background:   #E3DCCF;
   color:        #6B4BB6;
   border-color: #C9B9E6;
 }
 
-/* Tables in light mode */
 :root:not(.dark) .vp-doc th {
   background: #E3DCCF;
 }
@@ -128,10 +100,7 @@
   background: #ECE7DF;
 }
 
-/* --- Two-line nav title: slot-injected via CustomLayout.vue - */
-/* .wr-nav-title sits after the logo inside VPNavBarTitle      */
-
-/* Bump logo height (VitePress default is 24 px) */
+/* --- Nav title --- */
 :root { --vp-nav-logo-height: 50px; }
 
 .wr-nav-title {
@@ -140,7 +109,6 @@
   justify-content: center;
   line-height: 1.2;
 }
-/* "V Rising" — top line, smaller, reddish-orange */
 .wr-nav-line1 {
   font-family: 'Cinzel', Georgia, serif;
   font-weight: 600;
@@ -148,7 +116,6 @@
   letter-spacing: 0.06em;
   color: var(--wr-amber);
 }
-/* "Mod Wiki" — bottom line, larger, violet */
 .wr-nav-line2 {
   font-family: 'Cinzel', Georgia, serif;
   font-weight: 700;
@@ -157,10 +124,8 @@
   color: var(--vp-c-brand-1);
 }
 
-/* --- Header anchor: link icon instead of # ----------------- */
-:root {
-  --vp-header-anchor-symbol: '';
-}
+/* --- Header anchor --- */
+:root { --vp-header-anchor-symbol: ''; }
 .vp-doc .header-anchor::before {
   display: inline-block;
   width: 0.85em;
@@ -172,7 +137,7 @@
   vertical-align: middle;
 }
 
-/* --- Heading fonts & colours ------------------------------- */
+/* --- Headings --- */
 .vp-doc h1 {
   font-family: 'Cinzel', Georgia, serif !important;
   color: #FF9E70;
@@ -184,15 +149,13 @@
   color: var(--vp-c-text-1);
   border-top: 1px solid var(--vp-c-border);
 }
-.vp-doc h1 + h2 {
-  border-top: none;
-}
+.vp-doc h1 + h2 { border-top: none; }
 .vp-doc h3,
 .vp-doc h4 {
   color: var(--vp-c-brand-1);
 }
 
-/* --- Links ------------------------------------------------- */
+/* --- Links --- */
 .vp-doc a {
   color: var(--vp-c-brand-1);
   text-decoration-color: transparent;
@@ -203,32 +166,18 @@
   text-decoration-color: var(--wr-amber);
 }
 
-/* --- Sidebar — inactive item text: readable weight + colour - */
-.VPSidebarItem .VPLink .text {
-  font-weight: 500;
-}
-/* Dark mode: light lavender on deep sidebar */
-.dark .VPSidebarItem .VPLink .text {
-  color: #b0a4d4;
-}
+/* --- Sidebar --- */
+.VPSidebarItem .VPLink .text { font-weight: 500; }
+.dark .VPSidebarItem .VPLink .text { color: #b0a4d4; }
 
-/* Give every sidebar item a left gutter so the active bar    */
-/* has room to sit without overlapping the first letter.      */
-.VPSidebarItem > .item {
-  padding-left: 10px;
-}
+.VPSidebarItem > .item { padding-left: 10px; }
 
-/* --- Sidebar — active item: amber text + left bar ---------- */
 .VPSidebarItem.is-active > .item > .VPLink,
 .VPSidebarItem.is-active > .item > .VPLink .text {
   color: var(--wr-amber) !important;
   font-weight: 600;
 }
-
-/* ::before bar lives in the 10px gutter — clear of the text  */
-.VPSidebarItem.is-active > .item {
-  position: relative;
-}
+.VPSidebarItem.is-active > .item { position: relative; }
 .VPSidebarItem.is-active > .item::before {
   content: '';
   position: absolute;
@@ -240,81 +189,59 @@
   border-radius: 0 2px 2px 0;
 }
 
-/* --- Auto-hide "On this page" for pages with 0 or 1 entries - */
-/* Catches pages with no outline-able headings at all           */
+/* --- Hide "On this page" when empty or single entry --- */
 .VPDoc .aside:not(:has(.outline-link)),
-/* Catches pages whose root outline list has exactly one item   */
 .VPDoc .aside:has(ul.root > li:only-child) {
   display: none !important;
 }
 
-/* --- Nav bar ----------------------------------------------- */
+/* --- Nav bar --- */
 .VPNavBar {
   border-bottom: 1px solid var(--vp-c-border) !important;
   background: transparent !important;
 }
-.VPNavBar.has-sidebar .divider {
-  padding-left: 0 !important;
-}
-.VPNavBar .curtain {
-  display: none !important;
+.VPNavBar.has-sidebar .divider { padding-left: 0 !important; }
+.VPNavBar .curtain { display: none !important; }
+
+.VPNavBar:not(.has-sidebar) .title {
+  min-width: var(--vp-sidebar-width);
 }
 
-/* Menu left, right-side controls far right */
-.VPNavBar .content {
-  flex: 1;
-  min-width: 0;
-}
+.VPNavBar .content { flex: 1; min-width: 0; }
 .VPNavBar .content-body {
   display: flex;
   width: 100%;
   align-items: center;
   background: transparent !important;
 }
-.VPNavBar .content-body .menu {
-  order: -1;
-}
-.VPNavBar .content-body .appearance {
-  margin-left: 360px;
-}
-.VPNavBar .content-body .search {
-  order: 10;
-}
+.VPNavBar .content-body .menu    { order: -1; margin-left: 2rem; }
+.VPNavBar .content-body .appearance { margin-left: 360px; }
+.VPNavBar .content-body .search  { order: 10; }
 
-/* --- Code blocks — left violet accent bar ------------------ */
+/* --- Code blocks --- */
 .vp-doc div[class*='language-'] {
   border-left: 3px solid var(--vp-c-brand-2);
   border-radius: 0 8px 8px 0;
 }
 
-/* --- Inline code ------------------------------------------- */
+/* --- Inline code --- */
 .vp-doc :not(pre) > code {
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-brand-1);
   border: 1px solid var(--vp-c-border);
 }
 
-/* --- Tables (standard markdown tables) --------------------- */
-.vp-doc table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.vp-doc th {
-  background: var(--vp-c-bg-mute);
-  color: var(--vp-c-text-1);
-}
-.vp-doc tr:nth-child(even) td {
-  background: var(--vp-c-bg-soft);
-}
+/* --- Tables --- */
+.vp-doc table { border-collapse: collapse; width: 100%; }
+.vp-doc th { background: var(--vp-c-bg-mute); color: var(--vp-c-text-1); }
+.vp-doc tr:nth-child(even) td { background: var(--vp-c-bg-soft); }
 
-/* --- Custom badges ----------------------------------------- */
+/* --- Badges --- */
 .badge-admin  { color: #f87171; font-weight: 600; }
 .badge-player { color: #4ade80; font-weight: 600; }
 
-/* --- Console Commands table -------------------------------- */
-.cc-wrap {
-  width: 100%;
-}
+/* --- Console Commands table --- */
+.cc-wrap { width: 100%; }
 
 .cc-controls {
   display: flex;
@@ -351,11 +278,7 @@
   cursor: pointer;
 }
 
-.cc-info {
-  font-size: 0.8rem;
-  color: var(--vp-c-text-2);
-  margin-left: auto;
-}
+.cc-info { font-size: 0.8rem; color: var(--vp-c-text-2); margin-left: auto; }
 
 .cc-table {
   width: 100%;
@@ -363,14 +286,12 @@
   table-layout: fixed;
   font-size: 0.88rem;
 }
-
 .cc-table th,
 .cc-table td {
   padding: 0.45rem 0.65rem;
   vertical-align: top;
   border-bottom: 1px solid var(--vp-c-border);
 }
-
 .cc-table th {
   background: var(--vp-c-bg-mute);
   color: var(--vp-c-text-1);
@@ -380,12 +301,8 @@
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
+.cc-table tr:hover td { background: rgba(167, 139, 250, 0.04); }
 
-.cc-table tr:hover td {
-  background: rgba(167, 139, 250, 0.04);
-}
-
-/* Column widths — percentage-based so table always fits the container */
 .cc-col-cmd  { width: 22%; }
 .cc-col-user { width: 8%;  text-align: center; }
 .cc-col-hid  { width: 7%;  text-align: center; }
@@ -431,9 +348,7 @@
   -webkit-line-clamp: unset;
   cursor: pointer;
 }
-td:has(.cc-desc-text):hover {
-  background: rgba(255, 255, 255, 0.03);
-}
+td:has(.cc-desc-text):hover { background: rgba(255, 255, 255, 0.03); }
 
 .cc-arg-wrap {
   display: flex;
@@ -452,29 +367,20 @@ td:has(.cc-desc-text):hover {
   cursor: pointer;
   transition: border-color 0.12s, background 0.12s;
 }
-.cc-arg-pill:hover {
-  border-color: var(--vp-c-brand-1);
-}
+.cc-arg-pill:hover { border-color: var(--vp-c-brand-1); }
 .cc-arg-pill--active {
   border-color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
 }
 
-/* ── Full-width expansion rows ─────────────────────────────── */
+.cc-row-has-expansion td { border-bottom: none; }
 
-/* Remove the bottom border on the main row when expanded */
-.cc-row-has-expansion td {
-  border-bottom: none;
-}
-
-/* The expansion row's single full-width cell */
 .cc-expand-cell {
   padding: 0 !important;
   border-bottom: 1px solid var(--vp-c-border);
 }
 
-/* Each block inside the expansion (note or one argument) */
 .cc-expand-section {
   padding: 0.55rem 1rem;
   border-top: 1px solid var(--vp-c-divider);
@@ -483,32 +389,25 @@ td:has(.cc-desc-text):hover {
   flex-direction: column;
   gap: 0.3rem;
 }
-.cc-expand-section:first-child {
-  border-top: none;
-}
+.cc-expand-section:first-child { border-top: none; }
 
-/* Note section — amber left bar */
 .cc-expand-note {
   flex-direction: row;
   align-items: baseline;
   gap: 0.6rem;
   background: rgba(255, 158, 112, 0.06);
   border-left: 3px solid #FF9E70;
-  padding-left: calc(1rem - 3px); /* compensate for border */
+  padding-left: calc(1rem - 3px);
 }
 
-/* "⚠ Note" / "Suggestions:" labels */
 .cc-expand-label {
   flex-shrink: 0;
   font-size: 0.76rem;
   font-weight: 600;
   color: var(--vp-c-text-2);
 }
-.cc-expand-note .cc-expand-label {
-  color: #FF9E70;
-}
+.cc-expand-note .cc-expand-label { color: #FF9E70; }
 
-/* Argument header: code name + type/required badges */
 .cc-expand-arg-header {
   display: flex;
   align-items: center;
@@ -531,10 +430,7 @@ td:has(.cc-desc-text):hover {
   background: rgba(248, 113, 113, 0.08);
 }
 
-.cc-expand-arg-desc {
-  color: var(--vp-c-text-1);
-  line-height: 1.5;
-}
+.cc-expand-arg-desc { color: var(--vp-c-text-1); line-height: 1.5; }
 
 .cc-expand-arg-suggestions {
   display: flex;
@@ -547,7 +443,6 @@ td:has(.cc-desc-text):hover {
 .cc-icon-visible { opacity: 0.85; color: var(--vp-c-brand-1); }
 .cc-icon-hidden  { opacity: 0.35; }
 
-/* Pagination */
 .cc-pagination {
   display: flex;
   align-items: center;
@@ -566,11 +461,11 @@ td:has(.cc-desc-text):hover {
   font-size: 0.82rem;
   transition: border-color 0.12s, background 0.12s;
 }
-.cc-page-btn:hover   { border-color: var(--vp-c-brand-1); }
-.cc-page-btn.active  { background: var(--vp-c-brand-2); border-color: var(--vp-c-brand-2); color: #fff; }
+.cc-page-btn:hover    { border-color: var(--vp-c-brand-1); }
+.cc-page-btn.active   { background: var(--vp-c-brand-2); border-color: var(--vp-c-brand-2); color: #fff; }
 .cc-page-btn:disabled { opacity: 0.35; cursor: default; }
 
-/* --- Prefab table ------------------------------------------ */
+/* --- Prefab table --- */
 .pf-controls {
   display: flex;
   gap: 0.75rem;
@@ -628,10 +523,7 @@ td:has(.cc-desc-text):hover {
   white-space: nowrap;
 }
 
-.pf-type-filters {
-  display: flex;
-  gap: 0.3rem;
-}
+.pf-type-filters { display: flex; gap: 0.3rem; }
 .pf-type-btn {
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
@@ -643,13 +535,6 @@ td:has(.cc-desc-text):hover {
   transition: border-color 0.12s, background 0.12s, color 0.12s;
   white-space: nowrap;
 }
-.pf-type-btn:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-text-1);
-}
-.pf-type-btn.active {
-  background: var(--vp-c-brand-2);
-  border-color: var(--vp-c-brand-2);
-  color: #fff;
-}
+.pf-type-btn:hover  { border-color: var(--vp-c-brand-1); color: var(--vp-c-text-1); }
+.pf-type-btn.active { background: var(--vp-c-brand-2); border-color: var(--vp-c-brand-2); color: #fff; }
 .pf-info { font-size: 0.8rem; color: var(--vp-c-text-2); margin-bottom: 0.5rem; }
