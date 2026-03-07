@@ -39,86 +39,89 @@
   --vp-code-color:    #d4c8e8;
 }
 
-/* --- Light palette — warm parchment + logo colours --------- */
+/* --- Light palette — arcane library aesthetic -------------- */
 :root:not(.dark) {
-  /* Backgrounds: warm parchment tones */
-  --vp-c-bg:          #fdf6e8;
-  --vp-c-bg-soft:     #f5ead6;
-  --vp-c-bg-mute:     #ecdcc4;
-  --vp-c-bg-elv:      #f5ead6;
+  --vp-c-bg:          #F6F2E9;
+  --vp-c-bg-soft:     #ECE7DF;
+  --vp-c-bg-mute:     #E3DCCF;
+  --vp-c-bg-elv:      #ECE7DF;
 
-  --vp-c-border:      #d4b896;
-  --vp-c-divider:     #d4b896;
-  --vp-c-gutter:      #f0e4d0;
+  --vp-c-border:      #C9B9E6;
+  --vp-c-divider:     #C9B9E6;
+  --vp-c-gutter:      #EFE9FA;
 
-  /* Text: deep purple-brown — high contrast on parchment */
-  --vp-c-text-1:      #2d1f3d;
-  --vp-c-text-2:      #6b4f7a;
-  --vp-c-text-3:      #9a7daa;
+  --vp-c-text-1:      #2B2B2B;
+  --vp-c-text-2:      #6B5F8A;
+  --vp-c-text-3:      #9A8BBB;
 
-  /* Sidebar + nav tinted parchment */
-  --vp-sidebar-bg-color: #f0e4d0;
-  --vp-nav-bg-color:     rgba(253, 246, 232, 0.95);
-  --vp-local-search-bg:  #f5ead6;
+  --vp-sidebar-bg-color: #ECE7DF;
+  --vp-nav-bg-color:     rgba(246, 242, 233, 0.95);
+  --vp-local-search-bg:  #ECE7DF;
 
-  /* Code: parchment bg, violet ink */
-  --vp-code-bg:    #ecdcc4;
-  --vp-code-color: #5b21b6;
+  --vp-code-bg:    #E3DCCF;
+  --vp-code-color: #6B4BB6;
 
-  /* Brand: deeper violet for contrast on light bg */
-  --vp-c-brand-1:    #6d28d9;
-  --vp-c-brand-2:    #5b21b6;
-  --vp-c-brand-3:    #4c1d95;
-  --vp-c-brand-soft: rgba(109, 40, 217, 0.12);
+  --vp-c-brand-1:    #6B4BB6;
+  --vp-c-brand-2:    #4A2D86;
+  --vp-c-brand-3:    #3A1F70;
+  --vp-c-brand-soft: rgba(107, 75, 182, 0.12);
+
+  --wr-amber:    #F2A65A;
+  --wr-amber-lt: #F5B87A;
 }
 
-/* Sidebar inactive text in light mode: deep purple, readable on parchment */
+/* Sidebar inactive text */
 :root:not(.dark) .VPSidebarItem .VPLink .text {
-  color: #4a3560;
+  color: #4A2D86;
 }
 
-/* Active sidebar item: darkened amber for contrast on parchment */
+/* Active sidebar item */
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink,
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink .text {
-  color: #FF9E70 !important;
+  color: var(--wr-amber) !important;
 }
 :root:not(.dark) .VPSidebarItem.is-active > .item::before {
-  background: #FF9E70;
+  background: var(--wr-amber);
 }
 
-/* h1 in light mode: burnt amber — "ink on parchment" feel */
+/* Sidebar: subtle violet glow at the top */
+:root:not(.dark) .VPSidebar {
+  background: linear-gradient(to bottom, #EFE9FA 0%, #ECE7DF 12%) !important;
+}
+
+/* h1 in light mode */
 :root:not(.dark) .vp-doc h1 {
-  color: #FF9E70;
+  color: var(--wr-amber);
 }
 
-/* h3/h4 in light mode: deep violet */
+/* h3/h4 in light mode */
 :root:not(.dark) .vp-doc h3,
 :root:not(.dark) .vp-doc h4 {
-  color: #5b21b6;
+  color: #6B4BB6;
 }
 
 /* Links in light mode */
-:root:not(.dark) .vp-doc a          { color: #6d28d9; }
-:root:not(.dark) .vp-doc a:hover    { color: #FF9E70; text-decoration-color: #FF9E70; }
+:root:not(.dark) .vp-doc a          { color: #6B4BB6; }
+:root:not(.dark) .vp-doc a:hover    { color: var(--wr-amber); text-decoration-color: var(--wr-amber); }
 
-/* Code blocks in light mode: deep violet accent bar */
+/* Code blocks in light mode */
 :root:not(.dark) .vp-doc div[class*='language-'] {
-  border-left-color: #5b21b6;
+  border-left-color: #6B4BB6;
 }
 
 /* Inline code in light mode */
 :root:not(.dark) .vp-doc :not(pre) > code {
-  background: #ecdcc4;
-  color:      #5b21b6;
-  border-color: #d4b896;
+  background:   #E3DCCF;
+  color:        #6B4BB6;
+  border-color: #C9B9E6;
 }
 
-/* Table header in light mode */
+/* Tables in light mode */
 :root:not(.dark) .vp-doc th {
-  background: #ecdcc4;
+  background: #E3DCCF;
 }
 :root:not(.dark) .vp-doc tr:nth-child(even) td {
-  background: #f5ead6;
+  background: #ECE7DF;
 }
 
 /* --- Two-line nav title: slot-injected via CustomLayout.vue - */
@@ -245,19 +248,28 @@
 .VPNavBar {
   border-bottom: 1px solid var(--vp-c-border) !important;
 }
+.VPNavBar.has-sidebar .divider {
+  padding-left: 0 !important;
+}
+.VPNavBar .curtain {
+  display: none !important;
+}
 
-/* Menu left, search far right */
+/* Menu left, right-side controls far right */
 .VPNavBar .content {
   flex: 1;
-  justify-content: flex-start;
+  min-width: 0;
 }
 .VPNavBar .content-body {
+  display: flex;
   width: 100%;
-  justify-content: flex-start;
+  align-items: center;
 }
 .VPNavBar .content-body .menu {
   order: -1;
-  margin-right: auto;
+}
+.VPNavBar .content-body .appearance {
+  margin-left: auto;
 }
 .VPNavBar .content-body .search {
   order: 10;
