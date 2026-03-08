@@ -207,9 +207,10 @@ html { scrollbar-gutter: stable; }
 
 .VPNavBar .content { flex: 1; min-width: 0; }
 .VPNavBar .content-body {
-  display: flex;
-  width: 100%;
-  align-items: center;
+  display: flex !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  align-items: center !important;
 }
 @media (min-width: 960px) {
   .VPNavBar .content-body {
@@ -252,9 +253,8 @@ html { scrollbar-gutter: stable; }
   }
 }
 
-.VPNavBar .content-body .menu       { order: -1; }
-.VPNavBar .content-body .appearance { margin-left: auto; }
-.VPNavBar .content-body .search     { order: 10; }
+.VPNavBar .content-body .menu         { order: -1 !important; margin-right: auto !important; }
+.VPNavBar .content-body .search       { order: 10 !important; }
 
 /* --- Code blocks --- */
 .vp-doc div[class*='language-'] {
