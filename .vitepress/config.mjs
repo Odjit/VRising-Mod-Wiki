@@ -82,9 +82,8 @@ export default defineConfig({
     sidebar: {
       '/user/': [
         {
-          text: 'For Users',
           items: [
-            { text: 'Overview', link: '/user/' },
+            { text: 'For Users', link: '/user/' },
             {
               text: 'Installing Mods',
               collapsed: false,
@@ -109,9 +108,8 @@ export default defineConfig({
 
       '/dev/': [
         {
-          text: 'For Developers',
           items: [
-            { text: 'Overview', link: '/dev/' },
+            { text: 'For Developers', link: '/dev/' },
             {
               text: 'Getting Started',
               collapsed: false,
@@ -145,24 +143,22 @@ export default defineConfig({
 
       '/community/': [
         {
-          text: 'Community',
           items: [
-            { text: 'Overview',                  link: '/community/' },
-            { text: 'FAQ',                        link: '/community/faq' },
+            { text: 'Community',                 link: '/community/' },
+            { text: 'FAQ',                       link: '/community/faq' },
             { text: 'Values of This Community',  link: '/community/values' },
             { text: 'Abandoned Mods',            link: '/community/abandoned-mods' },
             { text: 'Mod Monetization',          link: '/community/monetization' },
             { text: 'Licensing & Attribution',   link: '/dev/licensing' },
-            { text: '+ Add a Page', link: '/editing' },
+            { text: '+ Add a Page',              link: '/editing' },
           ],
         },
       ],
 
       '/prefabs/': [
         {
-          text: 'Prefabs',
           items: [
-            { text: 'Overview',     link: '/prefabs/' },
+            { text: 'Prefabs',      link: '/prefabs/' },
             { text: 'All Prefabs',  link: '/prefabs/All' },
             { text: 'NPCs',         link: '/prefabs/CHAR' },
             { text: 'Items',        link: '/prefabs/Item' },
