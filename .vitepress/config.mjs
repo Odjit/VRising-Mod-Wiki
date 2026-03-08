@@ -70,11 +70,13 @@ export default defineConfig({
         text: 'Community',
         items: [
           { text: 'Overview',     link: '/community/' },
+          { text: 'FAQ',          link: '/community/faq' },
           { text: 'Discord',      link: 'https://vrisingmods.com/discord' },
           { text: 'Thunderstore', link: 'https://thunderstore.io/c/v-rising/' },
           { text: 'Contributing', link: '/editing' },
         ],
       },
+      { text: 'Ideas', link: 'https://ideas.vrisingmods.com/' },
     ],
 
     sidebar: {
@@ -82,12 +84,25 @@ export default defineConfig({
         {
           text: 'For Users',
           items: [
-            { text: 'Overview',                link: '/user/' },
-            { text: 'BepInEx Install',         link: '/user/bepinex_install' },
-            { text: 'Manual Mod Installation', link: '/user/Mod_Install' },
-            { text: 'Using Server Mods',       link: '/user/Using_Server_Mods' },
-            { text: 'Console Commands',        link: '/user/Console_Commands' },
-            { text: 'Client Rollback',         link: '/user/client_rollback' },
+            { text: 'Overview', link: '/user/' },
+            {
+              text: 'Installing Mods',
+              collapsed: false,
+              items: [
+                { text: 'BepInEx Install',         link: '/user/bepinex_install' },
+                { text: 'Manual Mod Installation', link: '/user/Mod_Install' },
+              ],
+            },
+            { text: 'Using Server Mods', link: '/user/Using_Server_Mods' },
+            {
+              text: 'Base Game',
+              collapsed: false,
+              items: [
+                { text: 'Console Commands', link: '/user/Console_Commands' },
+                { text: 'Client Rollback',  link: '/user/client_rollback' },
+              ],
+            },
+            { text: '+ Add a Page', link: '/editing' },
           ],
         },
       ],
@@ -96,14 +111,34 @@ export default defineConfig({
         {
           text: 'For Developers',
           items: [
-            { text: 'Overview',            link: '/dev/' },
-            { text: 'Development Setup',   link: '/dev/development_setup' },
-            { text: 'Template',            link: '/dev/template' },
-            { text: 'Resources',           link: '/dev/resources' },
-            { text: 'Open Source Mods',    link: '/dev/open source' },
-            { text: 'Migration Guide',     link: '/dev/migration_guide' },
-            { text: 'Thunderstore Upload', link: '/dev/upload_to_thunderstore' },
-            { text: 'AI Usage',            link: '/dev/AI_Usage' },
+            { text: 'Overview', link: '/dev/' },
+            {
+              text: 'Getting Started',
+              collapsed: false,
+              items: [
+                { text: 'Development Setup', link: '/dev/development_setup' },
+                { text: 'Migration Guide',   link: '/dev/migration_guide' },
+              ],
+            },
+            {
+              text: 'Mod Development',
+              collapsed: false,
+              items: [
+                { text: 'Template',          link: '/dev/template' },
+                { text: 'Modding Resources', link: '/dev/resources' },
+                { text: 'Open Source Mods',  link: '/dev/open source' },
+                { text: 'AI Usage',          link: '/dev/AI_Usage' },
+              ],
+            },
+            {
+              text: 'Publishing Mods',
+              collapsed: false,
+              items: [
+                { text: 'Thunderstore Upload',     link: '/dev/upload_to_thunderstore' },
+                { text: 'Licensing & Attribution', link: '/dev/licensing' },
+              ],
+            },
+            { text: '+ Add a Page', link: '/editing' },
           ],
         },
       ],
@@ -113,9 +148,12 @@ export default defineConfig({
           text: 'Community',
           items: [
             { text: 'Overview',                  link: '/community/' },
+            { text: 'FAQ',                        link: '/community/faq' },
             { text: 'Values of This Community',  link: '/community/values' },
             { text: 'Abandoned Mods',            link: '/community/abandoned-mods' },
             { text: 'Mod Monetization',          link: '/community/monetization' },
+            { text: 'Licensing & Attribution',   link: '/dev/licensing' },
+            { text: '+ Add a Page', link: '/editing' },
           ],
         },
       ],
@@ -131,6 +169,7 @@ export default defineConfig({
             { text: 'Tile Models',  link: '/prefabs/TM' },
             { text: 'VBlood Names', link: '/prefabs/VBloodNames' },
             { text: 'Remainders',   link: '/prefabs/Remainders' },
+            { text: '+ Add a Page', link: '/editing' },
           ],
         },
       ],
@@ -153,6 +192,7 @@ export default defineConfig({
 
     footer: {
       message: 'Wiki maintained by <a href="https://github.com/decaprime/">deca</a> and contributors.',
+      copyright: 'V Rising © Stunlock Studios.<br><a href="/legal">Legal &amp; Disclaimers</a>',
     },
 
     lastUpdated: { text: 'Last updated' },

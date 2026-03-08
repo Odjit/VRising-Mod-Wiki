@@ -18,6 +18,7 @@ title: Values of This Community
 ## Follow Licensing Requirements
 
 - Adhere to the licensing requirements associated with any work you use. This may include specific attribution instructions, providing a copy of the license with the work, or restrictions on use, particularly commercial use.
+- See [Licensing & Attribution](/dev/licensing) for practical guidance on choosing a license and crediting others' work.
 
 ## Collaboration
 

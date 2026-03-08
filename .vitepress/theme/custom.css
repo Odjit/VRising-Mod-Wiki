@@ -191,6 +191,77 @@ html { scrollbar-gutter: stable; }
   border-radius: 0 2px 2px 0;
 }
 
+/* --- "💡 Ideas" nav link — amber so it pops --- */
+.VPNavBarMenuLink[href*="ideas.vrisingmods.com"] {
+  color: var(--wr-amber) !important;
+  font-weight: 600 !important;
+}
+
+/* --- Overview/index sidebar items — amber + bold to distinguish from regular pages ---
+   Use > .item > a (direct child combinators) so ancestor section containers that happen
+   to contain the overview link somewhere inside them do NOT get styled. */
+.VPSidebarItem:has(> .item > a[href$="/user/"]) .text,
+.VPSidebarItem:has(> .item > a[href$="/dev/"]) .text,
+.VPSidebarItem:has(> .item > a[href$="/community/"]) .text,
+.VPSidebarItem:has(> .item > a[href$="/prefabs/"]) .text {
+  font-weight: 700 !important;
+}
+/* Amber tint when not the active page (active state already overrides to full amber) */
+.VPSidebarItem:not(.is-active):has(> .item > a[href$="/user/"]) .text,
+.VPSidebarItem:not(.is-active):has(> .item > a[href$="/dev/"]) .text,
+.VPSidebarItem:not(.is-active):has(> .item > a[href$="/community/"]) .text,
+.VPSidebarItem:not(.is-active):has(> .item > a[href$="/prefabs/"]) .text {
+  color: var(--wr-amber) !important;
+  opacity: 0.72;
+}
+
+/* --- "+ Add a Page" sidebar link — subtle brand colour, no border ---
+   Same fix: > .item > a ensures only the specific link item is targeted. */
+.VPSidebarItem:has(> .item > a[href*="/editing"]) {
+  margin-top: 8px !important;
+}
+.VPSidebarItem:has(> .item > a[href*="/editing"]) .text {
+  color: var(--vp-c-brand-1) !important;
+  font-style: italic !important;
+  opacity: 0.8;
+}
+
+/* --- FAQ details/summary accordion ---
+   summary = the question (bold, brand colour, rotating arrow)
+   content  = the answer (normal weight, separator line above) */
+.vp-doc details {
+  margin: 6px 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--vp-c-brand-2);
+}
+.vp-doc details summary {
+  cursor: pointer;
+  padding: 7px 0;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  list-style: none;
+  user-select: none;
+}
+.vp-doc details summary::-webkit-details-marker { display: none; }
+.vp-doc details summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 7px;
+  font-size: 0.78em;
+  transition: transform 0.15s;
+}
+.vp-doc details[open] {
+  border-left-color: var(--wr-amber);
+}
+.vp-doc details[open] > summary::before {
+  transform: rotate(90deg);
+}
+.vp-doc details[open] > summary {
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 6px;
+  padding-bottom: 7px;
+}
+
 /* --- Hide "On this page" when empty or single entry --- */
 .VPDoc .aside:not(:has(.outline-link)),
 .VPDoc .aside:has(ul.root > li:only-child) {
@@ -606,3 +677,38 @@ td:has(.cc-desc-text):hover { background: rgba(255, 255, 255, 0.03); }
 .pf-type-btn:hover  { border-color: var(--vp-c-brand-1); color: var(--vp-c-text-1); }
 .pf-type-btn.active { background: var(--vp-c-brand-2); border-color: var(--vp-c-brand-2); color: #fff; }
 .pf-info { font-size: 0.8rem; color: var(--vp-c-text-2); margin-bottom: 0.5rem; }
+
+/* --- Footer --- */
+.VPFooter .copyright { font-size: 0.75em; }
+
+/* --- Community quick-link cards --- */
+.community-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 20px 0 32px;
+}
+.community-link {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 18px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: border-color 0.2s, background 0.2s;
+}
+.community-link:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+}
+.community-link .cl-title {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  font-size: 0.95em;
+}
+.community-link .cl-desc {
+  font-size: 0.82em;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}

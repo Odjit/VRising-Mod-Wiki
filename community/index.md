@@ -1,31 +1,38 @@
 ---
 title: Community
+aside: false
 ---
 
 # Community
 
-The V Rising modding community lives across several platforms. Whether you need help, want to share your work, or are looking to contribute to this wiki, you'll find it here.
+The V Rising modding community lives across several platforms.
 
-## Discord
+<div class="community-links">
+  <a href="https://vrisingmods.com/discord" class="community-link">
+    <span class="cl-title">Discord</span>
+    <span class="cl-desc">Modding discussion, support &amp; announcements</span>
+  </a>
+  <a href="https://thunderstore.io/c/v-rising/" class="community-link">
+    <span class="cl-title">Thunderstore</span>
+    <span class="cl-desc">Browse and download mods</span>
+  </a>
+  <a href="https://ideas.vrisingmods.com/" class="community-link">
+    <span class="cl-title">Ideas &amp; Feedback</span>
+    <span class="cl-desc">Share and vote on suggestions</span>
+  </a>
+</div>
 
-The main hub for V Rising modding discussion, support, and announcements.
-
-[Join the Discord](https://vrisingmods.com/discord)
-
-## Thunderstore
-
-Browse and download mods for V Rising.
-
-[Visit Thunderstore](https://thunderstore.io/c/v-rising/)
-
-## Contributing to the Wiki
-
-This wiki is open source and community-maintained. Learn how to add or improve pages.
-
-[Contributing Guide](/editing)
+Have a question? Check the [FAQ](/community/faq) for common installation, troubleshooting, and development questions.
 
 ## Community Policies
 
 - [Values of This Community](/community/values): Core principles for developers in this community.
 - [Abandoned Mods](/community/abandoned-mods): How to properly take over an abandoned mod.
 - [Mod Monetization](/community/monetization): Policy on paid mods and open-source requirements.
+- [Licensing & Attribution](/dev/licensing): How to license your mod and credit others' work.
+
+
+## Contributing to the Wiki
+
+This wiki is open source and community-maintained. Learn how to [add or improve pages](/editing).
+
