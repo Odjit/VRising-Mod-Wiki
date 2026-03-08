@@ -151,7 +151,7 @@ html { scrollbar-gutter: stable; }
   color: var(--vp-c-text-1);
   border-top: 1px solid var(--vp-c-border);
 }
-.vp-doc h1 + h2 { border-top: none; }
+.vp-doc h1 + h2 { border-top: none !important; margin-top: 8px !important; padding-top: 0 !important; }
 .vp-doc h3,
 .vp-doc h4 {
   color: var(--vp-c-brand-1);
@@ -208,7 +208,6 @@ html { scrollbar-gutter: stable; }
 .VPNavBar .content { flex: 1; min-width: 0; }
 .VPNavBar .content-body {
   display: flex !important;
-  justify-content: flex-start !important;
   width: 100% !important;
   align-items: center !important;
 }
@@ -253,8 +252,39 @@ html { scrollbar-gutter: stable; }
   }
 }
 
-.VPNavBar .content-body .menu         { order: -1 !important; margin-right: auto !important; }
-.VPNavBar .content-body .search       { order: 10 !important; }
+/* Menu goes first and expands to fill all available space, pushing toggle/github/search to the far right */
+.VPNavBar .content-body .menu   { order: -1 !important; flex-grow: 1 !important; }
+.VPNavBar .content-body .search { order: 10 !important; }
+
+/* Constrain no-aside pages to the same ~752px column as aside pages to avoid ultra-wide lines */
+@media (min-width: 1280px) {
+  .VPDoc:not(.has-aside) .content { max-width: 900px; }
+}
+
+/* VPDoc adds 32px left+right padding on top of the inner .content's own 32px padding,
+   creating ~64-93px of dead space between the sidebar and text. Remove the outer layer. */
+@media (min-width: 2000px) {
+  .VPDoc.has-sidebar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* At ≥1280px VitePress sets justify-content:center on .container, which floats the
+   content block in the middle with dead space on both sides on sidebar pages.
+   Left-align it so content hugs the sidebar gap instead. */
+@media (min-width: 1280px) {
+  .VPDoc.has-sidebar .container {
+    justify-content: flex-start !important;
+  }
+}
+
+/* .content-container has margin:0 auto + max-width:688px (on has-aside pages),
+   which auto-centres the text block inside .content and adds another big left gap.
+   Left-align it for sidebar pages so text starts right after the 32px content padding. */
+.VPDoc.has-sidebar .content-container {
+  margin-left: 0 !important;
+}
 
 /* --- Code blocks --- */
 .vp-doc div[class*='language-'] {
@@ -319,7 +349,7 @@ html { scrollbar-gutter: stable; }
 .cc-info { font-size: 0.8rem; color: var(--vp-c-text-2); margin-left: auto; }
 
 .cc-table {
-  width: 100%;
+  width: 900px;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 0.88rem;
@@ -525,7 +555,7 @@ td:has(.cc-desc-text):hover { background: rgba(255, 255, 255, 0.03); }
   box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
 }
 .pf-table {
-  width: 100%;
+  width: 900px;
   border-collapse: collapse;
   font-size: 0.88rem;
 }
