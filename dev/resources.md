@@ -13,7 +13,7 @@ title: Resources
 - [**GPT Instructions**](/dev/gpt_instructions)
   - Instructions to help guide responses for [C#(Rising)](https://chatgpt.com/g/g-XGdFZaBHL-c-rising).
   
----
+
 
 ## Mod Tools
 
@@ -21,7 +21,7 @@ Tools made by those in the community.
 - [**KindredExtract**](https://thunderstore.io/c/v-rising/p/odjit/KindredExtract/) <img src="https://github.com/user-attachments/assets/a0e5a99d-af88-4d9d-9fee-84cc3978aeae" width="60" style="vertical-align: middle;" >
 - [**VRising Data Extractor**](https://github.com/adainrivers/virising-data-extractor?tab=readme-ov-file) Used for the info on the Gaming tools site.
   
----
+
 
 ## Web Resources
 
@@ -32,7 +32,7 @@ Tools made by those in the community.
 - [Map Icon reference](https://docs.google.com/spreadsheets/d/1FcbO8aMtH2FtSx-ntoMXjoyXhfGQkjnjzj1nkeR2Tk4/edit?gid=0#gid=0) Details about mapicon images.
 - [VRising Modding GPT](https://chatgpt.com/g/g-XGdFZaBHL-c-rising) Custom GPT with access to server system queries and game prefabs. Useful for learning about C# and refining code in a VRising context, though do note AI tools should be used with caution and an understanding of their limitations. 
 
----
+
 
 ## Unity Explorer
 
@@ -49,4 +49,4 @@ Tools made by those in the community.
 3. Copy the folder `sinai-dev-UnityExplorer` inside the `plugins` folder to the `BepInEx\plugins` folder.
 4. The next time you run the game with BepInEx, the Unity Explorer UI will be overlayed in the game. See https://github.com/yukieiji/UnityExplorer for more information about how to use it.
 
----
+

@@ -15,4 +15,10 @@ aside: false
 - [Manual Mod Installation](/user/Mod_Install)
 - [Using Server Mods in-game](/user/Using_Server_Mods)
 
-### If you wish to play an earlier version of V Rising: [Client Rollback](/user/client_rollback) 
+## Base Game
+
+To learn more about the base game's built-in capabilities, see [Console Commands](/user/Console_Commands) for a full reference of available commands and their usage.
+
+::: tip Want to play an older version of V Rising?
+See the [Client Rollback](/user/client_rollback) guide.
+:::
