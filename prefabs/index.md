@@ -3,7 +3,7 @@ title: Prefabs
 aside: false
 ---
 
-# Prefabs
+# Browse Prefabs
 
 Prefabs are identifiers often used in commands or configurations to refer to an object, item, effect, etc.
 

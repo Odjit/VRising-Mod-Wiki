@@ -83,7 +83,7 @@ export default defineConfig({
       '/user/': [
         {
           items: [
-            { text: 'For Users', link: '/user/' },
+            { text: 'Player Guide', link: '/user/' },
             {
               text: 'Installing Mods',
               collapsed: false,
@@ -109,7 +109,7 @@ export default defineConfig({
       '/dev/': [
         {
           items: [
-            { text: 'For Developers', link: '/dev/' },
+            { text: 'Development Guide', link: '/dev/' },
             {
               text: 'Getting Started',
               collapsed: false,
@@ -158,7 +158,7 @@ export default defineConfig({
       '/prefabs/': [
         {
           items: [
-            { text: 'Prefabs',      link: '/prefabs/' },
+            { text: 'Categories',      link: '/prefabs/' },
             { text: 'All Prefabs',  link: '/prefabs/All' },
             { text: 'NPCs',         link: '/prefabs/CHAR' },
             { text: 'Items',        link: '/prefabs/Item' },

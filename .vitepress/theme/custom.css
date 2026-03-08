@@ -192,15 +192,9 @@ html { scrollbar-gutter: stable; }
   border-radius: 0 2px 2px 0;
 }
 
-/* --- Active nav link — amber to match sidebar active state --- */
-.VPNavBarMenuLink.active {
-  color: var(--wr-amber) !important;
-  font-weight: 600 !important;
-}
-
-/* --- "Ideas" nav link — brand purple (swapped from amber) --- */
+/* --- "💡 Ideas" nav link — amber so it pops --- */
 .VPNavBarMenuLink[href*="ideas.vrisingmods.com"] {
-  color: var(--vp-c-brand-1) !important;
+  color: var(--wr-amber) !important;
   font-weight: 600 !important;
 }
 
