@@ -60,8 +60,8 @@ html { scrollbar-gutter: stable; }
 :root:not(.dark) .VPSidebarItem.is-active > .item > .VPLink .text {
   color: var(--wr-amber) !important;
 }
-:root:not(.dark) .VPSidebarItem.is-active > .item::before {
-  background: var(--wr-amber);
+:root:not(.dark) .VPSidebarItem.level-1:has(> .items .VPSidebarItem.is-active) > .item::before {
+  background: var(--vp-c-brand-1);
 }
 
 :root:not(.dark) .VPSidebar {
@@ -180,8 +180,21 @@ html { scrollbar-gutter: stable; }
   color: var(--wr-amber) !important;
   font-weight: 600;
 }
-.VPSidebarItem.is-active > .item { position: relative; }
-.VPSidebarItem.is-active > .item::before {
+/* Bar anchors to the parent group when a nested child is active */
+.VPSidebarItem.level-1:has(> .items .VPSidebarItem.is-active) > .item { position: relative; }
+.VPSidebarItem.level-1:has(> .items .VPSidebarItem.is-active) > .item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 3px;
+  background: var(--vp-c-brand-1);
+  border-radius: 0 2px 2px 0;
+}
+/* Top-level leaf active (no parent group): bar stays on the item itself */
+.VPSidebarItem.is-active.level-1:not(:has(.VPSidebarItem)) > .item { position: relative; }
+.VPSidebarItem.is-active.level-1:not(:has(.VPSidebarItem)) > .item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -190,6 +203,13 @@ html { scrollbar-gutter: stable; }
   width: 3px;
   background: var(--wr-amber);
   border-radius: 0 2px 2px 0;
+}
+/* Amber indicator on active leaf items — repositioned next to the text */
+.VPSidebarItem.level-2.is-active > .item > .indicator,
+.VPSidebarItem.level-3.is-active > .item > .indicator,
+.VPSidebarItem.level-4.is-active > .item > .indicator {
+  background-color: var(--wr-amber) !important;
+  left: 0 !important;
 }
 
 /* --- "💡 Ideas" nav link — amber so it pops --- */
