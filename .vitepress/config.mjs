@@ -116,6 +116,7 @@ export default defineConfig({
               items: [
                 { text: 'Development Setup', link: '/dev/development_setup' },
                 { text: 'Migration Guide',   link: '/dev/migration_guide' },
+                { text: 'How Mods Work',     link: '/dev/how-mods-work' },
               ],
             },
             {
@@ -126,6 +127,25 @@ export default defineConfig({
                 { text: 'Modding Resources', link: '/dev/resources' },
                 { text: 'Open Source Mods',  link: '/dev/open source' },
                 { text: 'AI Usage',          link: '/dev/AI_Usage' },
+              ],
+            },
+            {
+              text: 'Tutorials',
+              collapsed: false,
+              items: [
+                { text: 'Mod Structure',           link: '/dev/mod-structure' },
+                { text: 'Understanding Prefabs',   link: '/dev/prefabs' },
+                { text: 'Exploring Game Code',     link: '/dev/reading-game-code' },
+                { text: 'Hooking with Harmony',    link: '/dev/harmony-patching' },
+                { text: 'Entities and Components', link: '/dev/ecs-entities' },
+              ],
+            },
+            {
+              text: 'Reference',
+              collapsed: false,
+              items: [
+                { text: 'Entity Query Descriptions', link: '/dev/query-descriptions' },
+                { text: 'System Update Tree',        link: '/dev/systems-tree' },
               ],
             },
             {
