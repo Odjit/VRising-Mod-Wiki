@@ -36,18 +36,18 @@ Server behaviour is split across two JSON files:
 **Dedicated server** settings live within the dedicated server's own installation folder:
 
 ```
-C:\Program Files (x86)\Steam\steamapps\common\VRisingDedicatedServer\VRisingServer_Data\StreamingAssets\Settings\
+<Steam>\steamapps\common\VRisingDedicatedServer\VRisingServer_Data\StreamingAssets\Settings\
 ```
 
-The dedicated server reads only from within its own directory — files outside that folder have no effect on it.
+The dedicated server reads only from within its own directory; files outside that folder have no effect on it.
 
-**Client-hosted servers** (private and LAN games run through the game client) use a separate override folder in AppData:
+**Client-hosted servers** (private and LAN games run through the game client) use the same layout as the dedicated server, but from the game's own installation folder:
 
 ```
-%USERPROFILE%\AppData\LocalLow\Stunlock Studios\VRisingServer\Settings\
+<Steam>\steamapps\common\VRising\VRising_Data\StreamingAssets\Settings\
 ```
 
-This folder may be empty or only contain `adminlist.txt` and `banlist.txt` if you have not customised anything yet. That is normal — the server falls back to its built-in defaults for any file or key that is missing.
+This folder may be empty or only contain `adminlist.txt` and `banlist.txt` if you have not customised anything yet. That is normal; the server falls back to its built-in defaults for any file or key that is missing.
 
 **Private game presets** configured through the in-game UI are stored as generated-name files under:
 
@@ -71,15 +71,15 @@ This is the safest way to manage settings. Your file stays small, diffs are read
 
 ## How difficulty presets work
 
-`ServerHostSettings.json` has a `GameDifficultyPreset` field that acts as a bundle shortcut. Setting it to a named preset (for example `"Relaxed"` or `"Brutal"`) overrides a collection of `ServerGameSettings.json` values, including blood drain rate, enemy health and damage, loot rates, and sun damage.
+`ServerHostSettings.json` has a `GameDifficultyPreset` field that acts as a bundle shortcut. Setting it to a named preset (for example `"Relaxed"` or `"Brutal"`) overrides a collection of `ServerGameSettings.json` values at server startup, including blood drain rate, enemy health and damage, loot rates, and sun damage.
 
-The preset is applied at server startup. Any individual setting you explicitly include in `ServerGameSettings.json` will override the preset's value for that field, so you can still customise from a preset base:
+The preset takes priority over whatever is set in `ServerGameSettings.json`. Individual keys in that file will be ignored for any field the preset controls:
 
 ```json
 // ServerHostSettings.json
 { "GameDifficultyPreset": "Brutal" }
 
-// ServerGameSettings.json - override just one value from Brutal
+// ServerGameSettings.json - this BloodDrainModifier will be ignored; Brutal's value wins
 { "BloodDrainModifier": 1.5 }
 ```
 
