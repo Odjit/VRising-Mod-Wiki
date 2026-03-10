@@ -6,6 +6,7 @@ aside: false
 
 <script setup>
 import { onMounted, ref } from 'vue'
+import serverGameSettings from '@data/serverGameSettings.json'
 
 onMounted(() => {
   const searchEl  = document.getElementById('sgs-search');
@@ -95,13 +96,8 @@ onMounted(() => {
     timer = setTimeout(() => filterAndRender(searchEl.value.trim(), allSections), 150);
   });
 
-  const base = import.meta.env.BASE_URL;
-  fetch(`${base}data/serverGameSettings.json`)
-    .then(r => r.json())
-    .then(data => {
-      allSections = data;
-      render(data);
-    });
+  allSections = serverGameSettings;
+  render(serverGameSettings);
 });
 </script>
 

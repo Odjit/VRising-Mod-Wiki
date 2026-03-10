@@ -5,6 +5,7 @@ parent: For Developers
 
 <script setup>
 import { onMounted } from 'vue'
+import systemsTree from '@data/systemsTree.json'
 
 onMounted(() => {
   const container = document.getElementById('stree-container');
@@ -86,23 +87,18 @@ onMounted(() => {
     arrow.textContent = opening ? '▾' : '▸';
   });
 
-  const base = import.meta.env.BASE_URL;
-  fetch(`${base}data/systemsTree.json`)
-    .then(r => r.json())
-    .then(data => {
-      flatData = flatten(data);
-      showTree(data);
+  flatData = flatten(systemsTree);
+  showTree(systemsTree);
 
-      let timer;
-      searchEl.addEventListener('input', () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          const q = searchEl.value.trim();
-          if (q) showSearch(q);
-          else showTree(data);
-        }, 150);
-      });
-    });
+  let timer;
+  searchEl.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const q = searchEl.value.trim();
+      if (q) showSearch(q);
+      else showTree(systemsTree);
+    }, 150);
+  });
 });
 </script>
 

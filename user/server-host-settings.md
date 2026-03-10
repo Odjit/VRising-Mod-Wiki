@@ -6,6 +6,7 @@ aside: false
 
 <script setup>
 import { onMounted, ref } from 'vue'
+import serverHostSettings from '@data/serverHostSettings.json'
 
 onMounted(() => {
   const searchEl  = document.getElementById('shs-search');
@@ -119,13 +120,8 @@ onMounted(() => {
     timer = setTimeout(() => filterAndRender(searchEl.value.trim(), allData), 150);
   });
 
-  const base = import.meta.env.BASE_URL;
-  fetch(`${base}data/serverHostSettings.json`)
-    .then(r => r.json())
-    .then(data => {
-      allData = data;
-      render(data);
-    });
+  allData = serverHostSettings;
+  render(serverHostSettings);
 });
 </script>
 

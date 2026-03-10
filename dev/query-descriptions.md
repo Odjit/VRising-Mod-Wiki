@@ -5,6 +5,7 @@ parent: For Developers
 
 <script setup>
 import { onMounted } from 'vue'
+import queryDescriptions from '@data/queryDescriptions.json'
 
 onMounted(() => {
   const PER_PAGE = 50;
@@ -102,22 +103,17 @@ onMounted(() => {
     render();
   }
 
-  const base = import.meta.env.BASE_URL;
-  fetch(`${base}data/queryDescriptions.json`)
-    .then(r => r.json())
-    .then(data => {
-      allData = data;
-      filtered = data;
-      render();
+  allData = queryDescriptions;
+  filtered = queryDescriptions;
+  render();
 
-      const search = document.getElementById('eqd-search');
-      if (!search) return;
-      let timer;
-      search.addEventListener('input', () => {
-        clearTimeout(timer);
-        timer = setTimeout(() => applyFilter(search.value), 150);
-      });
-    });
+  const search = document.getElementById('eqd-search');
+  if (!search) return;
+  let timer;
+  search.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => applyFilter(search.value), 150);
+  });
 });
 </script>
 
