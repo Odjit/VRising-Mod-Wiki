@@ -99,6 +99,7 @@ export default defineConfig({
               items: [
                 { text: 'Console Commands', link: '/user/Console_Commands' },
                 { text: 'Client Rollback',  link: '/user/client_rollback' },
+                { text: 'Voice Chat',        link: '/user/voice-chat' },
 				            {
               text: 'Server Configuration',
               collapsed: false,
@@ -106,6 +107,7 @@ export default defineConfig({
                 { text: 'Overview',             link: '/user/server-configuration' },
                 { text: 'Server Host Settings', link: '/user/server-host-settings' },
                 { text: 'Server Game Settings', link: '/user/server-game-settings' },
+                { text: 'Saves & Autosaves',    link: '/user/saves' },
               ],
             },
               ],

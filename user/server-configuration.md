@@ -33,21 +33,24 @@ Server behaviour is split across two JSON files:
 
 ### File locations
 
-**Dedicated server** settings live within the dedicated server's own installation folder:
+Settings are loaded in two layers: defaults first, then local overrides.
+
+**Default files** are loaded from the installation folder and are not meant to be edited directly:
+
+- Dedicated server: `<Steam>\steamapps\common\VRisingDedicatedServer\VRisingServer_Data\StreamingAssets\Settings\`
+- Client-hosted: `<Steam>\steamapps\common\VRising\VRising_Data\StreamingAssets\Settings\`
+
+**Local overrides** are read from the persistent data path after the defaults. This is where you place your customised files:
 
 ```
-<Steam>\steamapps\common\VRisingDedicatedServer\VRisingServer_Data\StreamingAssets\Settings\
+%USERPROFILE%\AppData\LocalLow\Stunlock Studios\VRisingServer\Settings\
 ```
 
-The dedicated server reads only from within its own directory; files outside that folder have no effect on it.
+This folder is empty by default. You can place a full settings file here, or only the keys you want to differ from the defaults.
 
-**Client-hosted servers** (private and LAN games run through the game client) use the same layout as the dedicated server, but from the game's own installation folder:
+The persistent data path can be changed with the `-persistentDataPath` launch parameter, which is recommended for most setups and required if you run multiple servers on one host. Whatever path you specify, the server reads settings from a `Settings\` subfolder and writes saves to a `Saves\` subfolder within it.
 
-```
-<Steam>\steamapps\common\VRising\VRising_Data\StreamingAssets\Settings\
-```
-
-This folder may be empty or only contain `adminlist.txt` and `banlist.txt` if you have not customised anything yet. That is normal; the server falls back to its built-in defaults for any file or key that is missing.
+Settings files found within a save folder can also override the base settings in the same way, taking priority over the files above.
 
 **Private game presets** configured through the in-game UI are stored as generated-name files under:
 
@@ -89,3 +92,4 @@ The preset takes priority over whatever is set in `ServerGameSettings.json`. Ind
 
 - [Server Host Settings](/user/server-host-settings): full reference for `ServerHostSettings.json`
 - [Server Game Settings](/user/server-game-settings): full reference for `ServerGameSettings.json`
+- [Official dedicated server instructions](https://github.com/StunlockStudios/vrising-dedicated-server-instructions/tree/master) (Stunlock Studios, GitHub)
