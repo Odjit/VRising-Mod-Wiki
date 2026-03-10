@@ -20,6 +20,10 @@ The V Rising modding community lives across several platforms.
     <span class="cl-title">Ideas &amp; Feedback</span>
     <span class="cl-desc">Share and vote on suggestions</span>
   </a>
+  <a href="https://www.youtube.com/@kindredmods" class="community-link">
+    <span class="cl-title">YouTube</span>
+    <span class="cl-desc">Video tutorials for server owners and mod users</span>
+  </a>
 </div>
 
 Have a question? Check the [FAQ](/community/faq) for common installation, troubleshooting, and development questions.

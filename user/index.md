@@ -14,6 +14,7 @@ aside: false
 - [Manual BepInEx Installation](/user/bepinex_install)
 - [Manual Mod Installation](/user/Mod_Install)
 - [Using Server Mods in-game](/user/Using_Server_Mods)
+- Video walkthrough: [BepInEx &amp; Mod Install playlist](https://www.youtube.com/playlist?list=PLOhiRg0Vie9Ud25PZsNmLNKlttuWQCRga)
 
 ## Base Game
 
